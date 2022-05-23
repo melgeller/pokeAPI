@@ -1,0 +1,147 @@
+@import url("https://fonts.googleapis.com/css2?family=Chakra+Petch&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Chakra Petch", sans-serif;
+}
+
+html {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0.5))), url(./assets/pattern2.png);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(./assets/pattern2.png);
+  background-attachment: fixed;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.pokedeximg {
+  width: 3%;
+  margin-top: 20px;
+  margin-left: 30px;
+}
+
+.pokedeximg:hover {
+  -webkit-transform: scale(0.8);
+  transform: scale(0.8);
+}
+
+.navbar {
+  width: 100vw;
+}
+
+.header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-bottom: 50px;
+}
+
+.header img {
+  width: 50%;
+}
+
+.cartas {
+  width: 200px;
+  height: 300px;
+  text-align: center;
+  color: white;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.6)), to(rgba(0, 0, 0, 0.6))), url(https://data.whicdn.com/images/309000416/original.gif);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(https://data.whicdn.com/images/309000416/original.gif);
+  border-radius: 100px;
+  border: 5px solid wheat;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+          box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+}
+
+.cartas img {
+  max-width: 50%;
+  margin: 20px;
+}
+
+.cartas:hover {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.cartas:not(:hover) {
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.gallery {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 30px;
+  margin-left: 70px;
+  margin-right: 70px;
+}
+
+.pokeSEARCH {
+  width: 250px;
+  margin-bottom: 70px;
+  height: 35px;
+  border-radius: 15px;
+  border: 5px solid wheat;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+          box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+  font-size: large;
+  padding-left: 20px;
+}
+
+#pokenombres {
+  font-size: x-large;
+}
+
+#pokepeso {
+  font-size: large;
+}
+
+#pokealto {
+  font-size: large;
+}
+
+#pokenumero {
+  font-size: x-large;
+}
+/*# sourceMappingURL=styles.css.map */
