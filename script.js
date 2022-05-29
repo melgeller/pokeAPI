@@ -2,8 +2,11 @@ const pokeURL = "https://pokeapi.co/api/v2/pokemon/";
 
 const cardGallery$$ = document.querySelector('.gallery')
 
+const pokeInput$$ = document.querySelector('.pokeSEARCH')
+
+const pokeBOX = [];
+
 const pokeGET = async () => {
-  const pokeBOX = [];
 
   for (i = 1; i < 152; i++) {
     const pokeAPI = await fetch(`https://pokeapi.co/api/v2/pokemon/${i}`);
@@ -21,7 +24,10 @@ const pokeGET = async () => {
   pokePaint(pokeMAPPED);
 };
 
+
+
 const pokePaint = (arrayPoke) => {
+  cardGallery$$.innerHTML = ``
   for (i = 0; i < 151; i++) {
     const poke = arrayPoke[i];
     //NODOS
@@ -31,18 +37,21 @@ const pokePaint = (arrayPoke) => {
     const order$$ = document.createElement("p");
     const weight$$ = document.createElement("p");
     const height$$ = document.createElement("p");
+
     //INFO-NODOS
     order$$.textContent = "#" + poke.pokeSort;
     titulo$$.textContent = poke.pokeName;
     image$$.src = poke.pokeIMG;
     weight$$.textContent = "Peso:  " + poke.pokeWeight;
     height$$.textContent = "Altura:  " + poke.pokeHeight;
+
     //HIJOS
     cardDiv$$.appendChild(order$$);
     cardDiv$$.appendChild(titulo$$);
     cardDiv$$.appendChild(image$$);
     cardDiv$$.appendChild(weight$$);
     cardDiv$$.appendChild(height$$);
+    
     //CLASES
     titulo$$.setAttribute('id', 'pokenombres')
     weight$$.setAttribute('id', 'pokepeso')
@@ -54,21 +63,23 @@ const pokePaint = (arrayPoke) => {
 
   }
 };
-const pokeInput$$ = document.querySelector('.pokeSEARCH')
 
-const buscar = (cartas) => {
-const cartasFiltradas = [];
-for (const carta of cartas){
-  if (carta.name.toLowerCase().includes(pokeInput$$.value.toLowerCase().trim())) {
-    cartasFiltradas.push(carta)
+
+
+
+const buscar = () => {
+  const cartasFiltradas = [];
+  for (const carta of pokeBOX){
+    if (carta.name.toLowerCase().includes(pokeInput$$.value.toLowerCase().trim())) {
+      cartasFiltradas.push(carta)
+    }
+    
   }
 
-}
-pokePaint(cartasFiltradas)
-}
 
+  pokePaint(cartasFiltradas)
+  }
 
+  pokeGET();
 
-
-
-pokeGET();
+  pokeInput$$.addEventListener('input', () => buscar());

@@ -32,7 +32,7 @@ body {
 .pokedeximg {
   width: 3%;
   margin-top: 20px;
-  margin-left: 30px;
+  margin-left: 10px;
 }
 
 .pokedeximg:hover {
@@ -41,7 +41,7 @@ body {
 }
 
 .navbar {
-  width: 100vw;
+  width: 98vw;
 }
 
 .header {
