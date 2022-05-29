@@ -24,12 +24,57 @@ const pokeGET = async () => {
   pokePaint(pokeMAPPED);
 };
 
-
-
 const pokePaint = (arrayPoke) => {
   cardGallery$$.innerHTML = ``
   for (i = 0; i < 151; i++) {
     const poke = arrayPoke[i];
+    //NODOS
+    const cardDiv$$ = document.createElement("div");
+    const titulo$$ = document.createElement("h2");
+    const image$$ = document.createElement("img");
+    const order$$ = document.createElement("p");
+    const weight$$ = document.createElement("p");
+    const height$$ = document.createElement("p");
+
+    //INFO-NODOS
+    order$$.textContent = "#" + poke.pokeSort;
+    titulo$$.textContent = poke.pokeName;
+    image$$.src = poke.pokeIMG;
+    weight$$.textContent = "Peso:  " + poke.pokeWeight;
+    height$$.textContent = "Altura:  " + poke.pokeHeight;
+
+    //HIJOS
+    cardDiv$$.appendChild(order$$);
+    cardDiv$$.appendChild(titulo$$);
+    cardDiv$$.appendChild(image$$);
+    cardDiv$$.appendChild(weight$$);
+    cardDiv$$.appendChild(height$$);
+    
+    //CLASES
+    titulo$$.setAttribute('id', 'pokenombres')
+    weight$$.setAttribute('id', 'pokepeso')
+    height$$.setAttribute('id', 'pokealto')
+    order$$.setAttribute('id', 'pokenumero')
+
+    cardGallery$$.appendChild(cardDiv$$)
+    cardDiv$$.classList.add('cartas')
+
+  }
+};
+
+const pokeSinglePaint = (arrayPoke) => {
+  //MAP
+  const pokeMAPPED = arrayPoke.map((poke) => ({
+    pokeName: poke.name,
+    pokeSort: poke.id,
+    pokeWeight: poke.weight,
+    pokeHeight: poke.height,
+    pokeIMG: poke.sprites.versions['generation-v']['black-white'].animated.front_default
+  }));
+
+  cardGallery$$.innerHTML = ``
+
+  for (const poke of pokeMAPPED) {
     //NODOS
     const cardDiv$$ = document.createElement("div");
     const titulo$$ = document.createElement("h2");
@@ -75,9 +120,7 @@ const buscar = () => {
     }
     
   }
-
-
-  pokePaint(cartasFiltradas)
+  pokeSinglePaint(cartasFiltradas)
   }
 
   pokeGET();
